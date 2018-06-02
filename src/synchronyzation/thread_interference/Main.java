@@ -17,6 +17,5 @@ public class Main {
         thread2.join();
 
         System.out.println(counter.value());
-        System.out.println("test");
     }
 }
