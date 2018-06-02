@@ -13,5 +13,7 @@ public class Main {
         System.out.println(thread1.isInterrupted());
         thread2.interrupt();
         System.out.println(thread2.isInterrupted());
+
+        System.out.println("!");
     }
 }
