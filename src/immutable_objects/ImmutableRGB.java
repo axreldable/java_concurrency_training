@@ -18,10 +18,10 @@ final public class ImmutableRGB {
         }
     }
 
-    public ImmutableRGB(int red,
-                        int green,
-                        int blue,
-                        String name) {
+    ImmutableRGB(int red,
+                 int green,
+                 int blue,
+                 String name) {
         check(red, green, blue);
         this.red = red;
         this.green = green;

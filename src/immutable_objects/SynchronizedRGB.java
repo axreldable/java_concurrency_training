@@ -18,10 +18,10 @@ public class SynchronizedRGB {
         }
     }
 
-    public SynchronizedRGB(int red,
-                           int green,
-                           int blue,
-                           String name) {
+    SynchronizedRGB(int red,
+                    int green,
+                    int blue,
+                    String name) {
         check(red, green, blue);
         this.red = red;
         this.green = green;
@@ -42,11 +42,11 @@ public class SynchronizedRGB {
         }
     }
 
-    public synchronized int getRGB() {
+    synchronized int getRGB() {
         return ((red << 16) | (green << 8) | blue);
     }
 
-    public synchronized String getName() {
+    synchronized String getName() {
         return name;
     }
 
