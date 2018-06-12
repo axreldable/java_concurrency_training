@@ -2,6 +2,8 @@ package interview_questions.java_util_concurrent;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ConcurrentModificationExceptionExample {
     private final static Long CONST = 1_000_000L;
@@ -22,11 +24,9 @@ public class ConcurrentModificationExceptionExample {
 
         Runnable writer = () -> list.set(0, 25L);
 
-        Thread threadReader = new Thread(reader);
-        Thread threadWriter = new Thread(writer);
-
-        threadReader.start();
-        threadWriter.start();
+        ExecutorService service = Executors.newFixedThreadPool(2);
+        service.submit(reader);
+        service.submit(writer);
 
         System.out.println("!");
         list.stream()
